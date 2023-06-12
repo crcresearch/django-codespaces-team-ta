@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Home Page! - DWP</title>
+    </head>
+
+
+
+    <body style="background-color: #ececff;">
+        <h1 style="color: #3e5a49;">Device List <img src="/static/Octocat.png" style="width: 100px;"/></h1>
+        <hr />
+
+        <div style="width: 50%; display:inline-block;">
+            <ol>
+                {% for device in device_list %}
+                <li>{{ device.name }}: {{ device.description }} ({{ device.device_type.name }})</li>
+                {% endfor %}
+            </ol>
+        </div>
+        
+        <div style="width: 40%; display: inline-block;">
+            <ul>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+
+        <p>
+            This is some text that may be long, but it can take up an entire paragraph!
+        </p>
+
+        Start Date:
+        <input type="date" />
+
+        End Date:
+        <input type="date" />
+        <br />
+        <a href="https://crc.nd.edu" target="_blank">The CRC's Home Page!</a>
+
+        <div>
+            <img src="https://www.banfield.com/-/media/Project/Banfield/Main/en/Wellness_at_Banfield/Puppy_Hub/Puppy_Hub_0-3_Months/0992_01_4x3L.jpg?h=1153&w=1536&rev=1187902491b444ddaed3186dddac7b64&hash=0EBAED4A670DF63314C9994D96AE80AA" style="width: 50%;"/>
+
+        </div>
+
+        <button>Click me!</button>
+    </body>
+</html>

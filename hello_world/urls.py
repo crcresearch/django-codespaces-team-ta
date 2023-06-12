@@ -18,8 +18,13 @@ from django.urls import path, include
 
 from hello_world.core import views as core_views
 
+from device_tracker.views import home, home_boostrap
+
 urlpatterns = [
     path("", core_views.index),
     path("admin/", admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
+
+    path("home/", home),
+    path("home_bootstrap", home_boostrap),
 ]
