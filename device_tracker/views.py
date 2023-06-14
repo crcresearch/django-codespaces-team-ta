@@ -8,3 +8,8 @@ def home(request):
     return render(request, 'home.html', {
         'device_list': devices
     })
+
+
+def map(request):
+
+    return render(request, 'map.html', {})
