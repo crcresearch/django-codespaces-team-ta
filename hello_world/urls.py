@@ -18,7 +18,7 @@ from django.urls import path, include
 
 from hello_world.core import views as core_views
 
-from device_tracker.views import home, home_boostrap
+from device_tracker.views import home, map
 
 urlpatterns = [
     path("", core_views.index),
@@ -26,5 +26,5 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
 
     path("home/", home),
-    path("home_bootstrap", home_boostrap),
+    path("map/", map),
 ]

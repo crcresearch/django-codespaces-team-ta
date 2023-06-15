@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Home Page! - DWP</title>
+        <title>Device Tracker!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     </head>
 
 
 
-    <body style="background-color: #ececff;">
-        <h1 style="color: #3e5a49;">Device List <img src="/static/Octocat.png" style="width: 100px;"/></h1>
-        <hr />
-
-        <div style="width: 50%; display:inline-block;">
-            <ol>
-                {% for device in device_list %}
-                <li>{{ device.name }}: {{ device.description }} ({{ device.device_type.name }})</li>
-                {% endfor %}
-            </ol>
-        </div>
-        
-        <div style="width: 40%; display: inline-block;">
-            <ul>
-                <li>Item 3</li>
-                <li>Item 4</li>
-            </ul>
-        </div>
-
-        <p>
-            This is some text that may be long, but it can take up an entire paragraph!
-        </p>
-
-        Start Date:
-        <input type="date" />
-
-        End Date:
-        <input type="date" />
+    <body>
         <br />
-        <a href="https://crc.nd.edu" target="_blank">The CRC's Home Page!</a>
-
-        <div>
-            <img src="https://www.banfield.com/-/media/Project/Banfield/Main/en/Wellness_at_Banfield/Puppy_Hub/Puppy_Hub_0-3_Months/0992_01_4x3L.jpg?h=1153&w=1536&rev=1187902491b444ddaed3186dddac7b64&hash=0EBAED4A670DF63314C9994D96AE80AA" style="width: 50%;"/>
-
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Device Tracker</h2>
+            </div>
         </div>
 
-        <button>Click me!</button>
+        <hr style="width: 50%; position: relative; margin-left: auto; margin-right: auto;"/>
+
+        <div class="row">
+            <div class="col-lg-6 offset-3">
+                <div id="chart_container"></div>
+            </div>
+        </div>
+
+        <script>
+            Highcharts.chart('chart_container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Device Entries Recorded'
+                },
+                
+                xAxis: {
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Number of records'
+                    }
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: "Sample 1",
+                    data: [10]
+                },
+                {
+                    name: "Sample 2",
+                    data: [15]
+                }]
+            });
+        </script>
     </body>
 </html>
